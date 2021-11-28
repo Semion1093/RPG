@@ -50,17 +50,17 @@ namespace RPG
 
         public MonsterType MonsterType { get; set; }
 
-        public string TypeText
+        public string GetTypeText(MonsterType monsterType)
         {
-            get
+            switch (monsterType)
             {
-                if (MonsterType == MonsterType.Dragon) return "Дракон";
-                if (MonsterType == MonsterType.Vampire) return "Вампир";
-                if (MonsterType == MonsterType.Snake) return "Змей";
-                if (MonsterType == MonsterType.Zombie) return "Зомби";
-                if (MonsterType == MonsterType.Spider) return "Паук";
-                if (MonsterType == MonsterType.Mutant) return "Мутант";
-                else throw new Exception("Вы не выбрали тип монстра");
+                case MonsterType.Dragon: return "Дракон"; break;
+                case MonsterType.Vampire: return "Вампир"; break;
+                case MonsterType.Snake: return "Змей"; break;
+                case MonsterType.Zombie: return "Зомби"; break;
+                case MonsterType.Spider: return "Паук"; break;
+                case MonsterType.Mutant: return "Мутант"; break;
+                default: return "Вы не выбрали тип монстра";
             }
         }
 

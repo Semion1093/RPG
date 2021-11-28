@@ -43,7 +43,7 @@ namespace RPG
             }
         }
 
-        public void Wounds(int damage)
+        public override void Wounds(int damage)
         {
             Random rnd = new Random();
             damage = rnd.Next(0, 99);
