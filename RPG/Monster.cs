@@ -5,7 +5,6 @@ using System.Text;
 namespace RPG
 {
     enum MonsterType { Dragon, Vampire, Snake, Zombie, Spider, Mutant };
-
     class Monster : Creature, ICombatan
     {
         private int _minAttack;
@@ -91,17 +90,17 @@ namespace RPG
             IsDie = isdie;
         }
 
-        public int GetAttack(int bonus)
+        public int Attack(int bonus)
         {
             Random rnd = new Random();
             bonus = rnd.Next(10, 90);
             return bonus + 10;
         }
 
-        public void Wounds(int damage)
+        public override void Wounds(int damage)
         {
             Random rnd = new Random();
-            damage = rnd.Next(0, 99);
+            damage = rnd.Next(30, 99);
             if (HP - damage < 0)
                 HP = 0;
             int res_damage = HP - damage;
@@ -110,22 +109,6 @@ namespace RPG
         public void Heals()
         {
             HP = MaxHP;
-        }
-
-        public override int Hurt()
-        {
-            return (HP - 20);
-            if (HP < 0) return 0;
-        }
-
-        void ICombatan.Hurt()
-        {
-
-        }
-
-        public void Attack()
-        {
-
         }
     }
 }

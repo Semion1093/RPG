@@ -6,13 +6,12 @@ namespace RPG
 {
     interface ICombatan
     {
-        void Hurt();
+        void Wounds(int damage);
 
-        void Attack();
+        int Attack(int bonus);
 
         public int MinAttack { get; set; }
 
         public int MaxAttack { get; set; }
     }
-    
 }

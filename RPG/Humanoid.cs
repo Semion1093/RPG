@@ -43,9 +43,11 @@ namespace RPG
             }
         }
 
-        public override int Hurt()
+        public void Wounds(int damage)
         {
-           return (HP - 30);
+            Random rnd = new Random();
+            damage = rnd.Next(0, 99);
+            int res_damage = HP - damage;
         }
     }
 }

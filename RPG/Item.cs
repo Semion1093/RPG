@@ -21,5 +21,10 @@ namespace RPG
             Cost = cost;
             Weigth = weigth;
         }
+
+        public static implicit operator int(Item v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -44,14 +44,11 @@ namespace RPG
             }
         }
 
-        public void Attack()
+        public int Attack(int bonus)
         {
-
-        }
-
-        void ICombatan.Hurt()
-        {
-
+            Random rnd = new Random();
+            bonus = rnd.Next(10, 70);
+            return bonus + 10;
         }
     }
 }

@@ -75,8 +75,7 @@ namespace RPG
                 else return "Мертв";
             }
         }
-
-        public abstract int Hurt();
+        public abstract void Wounds(int damage);
     }
 
 }
